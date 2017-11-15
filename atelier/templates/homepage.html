@@ -1,0 +1,86 @@
+{% extends "base.html" %} 
+{% load cms_tags sekizai_tags %} 
+{% load static %} 
+{% block title %} {% page_attribute "page_title" %} {% endblock title %} 
+{% block content %}
+
+{% addtoblock "css" %}
+{% endaddtoblock %}
+
+<div class="home">
+    <div class="row center">
+        <div class="small-12 large-7 columns services">
+            <div class="row align-spaced">
+                <div class="small-11 medium-3 large-5 colums" id="bar">
+                    <a href="{% page_url "bar" %}">
+                        <h4><span>B</span>ar</h4>
+                        <img src="{% static 'bar_home.jpg' %}" alt="img">
+                        <p>Et quia Montius inter dilancinantium manus spiritum efflaturus Epigonum.</p>
+                    </a>
+                </div>
+                <div class="small-11 medium-3 large-5 colums" id="atelier">
+                    <a href="{% page_url "atelier" %}">
+                        <h4><span>A</span>telier</h4>
+                        <img src="{% static 'atelier_home.jpg' %}" alt="img">
+                        <p>Et quia Montius inter dilancinantium manus spiritum efflaturus Epigonum.</p>
+                    </a>
+                </div>
+                <div class="small-11 medium-3 large-5 colums" id="evenements">
+                    <a href="{% page_url "events" %}">
+                        <h4><span>E</span>vénements</h4>
+                        <img src="{% static 'events_home.jpg' %}" alt="img">
+                        <p>Et quia Montius inter dilancinantium manus spiritum efflaturus Epigonum.</p>
+                    </a>
+                </div>
+                <div class="small-11 medium-3 large-5 colums" id="services">
+                    <a href="{% page_url "services" %}">
+                        <h4><span>S</span>ervices</h4>
+                        <img src="{% static 'services_home.jpg' %}" alt="img">
+                        <p>Et quia Montius inter dilancinantium manus spiritum efflaturus Epigonum.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="small-12 medium-6  large-5 columns evenements">
+            <div class="fb-page" data-href="https://www.facebook.com/lebarlatelier/" data-tabs="events" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/lebarlatelier/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/lebarlatelier/">Le Bar L&#039;Atelier</a></blockquote></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 colums newsletter">
+
+            {% placeholder "newsletter" %}
+        </div>
+    </div>
+
+    <div class="row home-footer">
+        <div class="small-12 medium-4 colums">
+            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+
+        <div class="small-12 medium-4 colums">
+            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="small-12 medium-4 colums">
+            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+    </div>
+</div>
+
+
+
+{% addtoblock "js" %}
+<!-- <div id="fb-root"></div> -->
+<script type="text/javascript">
+    $(window).load(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1150552338378962';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+{% endaddtoblock %} 
+
+{% endblock content %}

@@ -1,0 +1,61 @@
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    body {
+        .logo {
+            display: none;
+        }
+    }
+
+    // PAGES
+
+        .base {
+            .horaire-dynamique {
+                padding-bottom: 1.5em;
+            }
+        }
+
+        .title-bar {
+            display: none;
+        }
+        // HOME CSS
+        .home {
+            .services {
+                text-align: center;
+                #bar {
+                    background-color: $rouge-atelier-transparent;
+                }
+                #atelier {
+                    background-color: $vert-atelier-transparent;
+                }
+                #evenements {
+                    background-color: $bleu-atelier-transparent;
+                }
+                #services {
+                    background-color: $jaune-atelier-transparent;
+                }
+            }
+            .evenements {
+                text-align: center;
+                margin: auto
+            }
+
+            .home-footer {
+                background-color: $white-home-transparent;
+    
+                div {
+                    padding: 1em;
+                }
+            }
+        }
+    
+        // BAR CSS
+        .bar {
+            #snack_bar {
+                h2 {
+                    line-height: 84px;
+                }
+            }
+        }
+        
+    }
+    

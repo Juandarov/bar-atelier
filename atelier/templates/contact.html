@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+<h1>Contact</h1>
+
+<div class="contact">
+    <div class="row">
+        <div class="small-12 medium-4 columns adress">
+            <h4><span>n</span>otre adress</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+        <div class="small-12 medium-8 partenaria">
+            <h4><span>p</span>artenaria</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 medium-8 columns email">
+            <h4><span>e</span>nvoyer un message</h4>
+            {% placeholder "form_contact" %}
+        </div>
+        <div class="small-12 medium-4 picture-geek">
+            <img src="{% static 'contact_img1.png' %}" alt="img">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            {% placeholder "atelier_map" %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,184 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load sass_tags %}
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}This is my new project home page{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="{% sass_src 'css/scss/style.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> {% render_block "css" %}
+    <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <link async href="http://fonts.googleapis.com/css?family=Passero%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Syncopate" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            background-image: url("{% static 'bg03.png' %}");
+        }
+    </style>
+</head>
+
+<body>
+    {% cms_toolbar %}
+    <div class="container base">
+        <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+        <div class="row">
+            <div class="large-3 colums logo">
+                <img src="{% static 'logo.png' %}" alt="img">
+            </div>
+
+            <div class="small-12 large-9 colums nav-custom">    
+                <div class="small-12 columns horaire-dynamique"></div>
+                        
+                <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
+                    <button class="menu-icon" type="button" data-toggle></button>
+                    <div class="title-bar-title">Menu</div>
+                </div>
+        
+                <div class="top-bar" id="main-nav">
+                    <div class="top-bar">
+                        <ul class="dropdown vertical medium-horizontal menu" data-dropdown-menu>
+                            {% show_menu 0 100 100 100 %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block content %} {% endblock content %}
+
+        <footer>
+            <h4>FOOTER</h4>
+            <p>heheeehehe</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="{% static 'foundation-sites/dist/js/foundation.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'foundation-sites/js/foundation.core.js' %}"></script>
+    <script type="text/javascript" src="{% static 'foundation-sites/js/foundation.util.motion.js ' %}"></script>
+    <script type="text/javascript" src="{% static 'foundation-sites/dist/js/plugins/foundation.orbit.js' %}"></script>
+    <script type="text/javascript" src="{% static 'foundation-sites/dist/js/plugins/foundation.accordion.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'foundation-sites/js/foundation.tabs.js' %}"></script>
+    <script type="text/javascript" src="{% static 'foundation-sites/dist/js/plugins/foundation.responsiveAccordionTabs.min.js' %}"></script>
+    
+    {% static_placeholder "horaires" %}
+    <script type="text/javascript">
+        //0=Sun, 1=Mon, ..., 6=Sat
+    
+        $(document).ready(function () {
+            var jourActuel = new Date();
+            var heureActuelle = getval();
+    
+            if ( jourActuel.getDay() == 1 && get24Hr(heureActuelle) > get24Hr(horairesOuvertures1) && get24Hr(heureActuelle) < get24Hr(horairesFermetures1) ) {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='green'>ouvert</strong></p>" );
+            }
+            else if ( jourActuel.getDay() == 2 && get24Hr(heureActuelle) > get24Hr(horairesOuvertures2) && get24Hr(heureActuelle) < get24Hr(horairesFermetures2) ) {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='green'>ouvert</strong></p>" );
+            }
+            else if ( jourActuel.getDay() == 3 && get24Hr(heureActuelle) > get24Hr(horairesOuvertures3) && get24Hr(heureActuelle) < get24Hr(horairesFermetures3) ) {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='green'>ouvert</strong></p>" );
+            }
+            else if ( jourActuel.getDay() == 4 && get24Hr(heureActuelle) > get24Hr(horairesOuvertures4) && get24Hr(heureActuelle) < get24Hr(horairesFermetures4) ) {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='green'>ouvert</strong></p>" );
+            }
+            else if ( jourActuel.getDay() == 5 && get24Hr(heureActuelle) > get24Hr(horairesOuvertures5) && get24Hr(heureActuelle) < get24Hr(horairesFermetures5) ) {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='green'>ouvert</strong></p>" );
+            }
+            else if ( jourActuel.getDay() == 6 && get24Hr(heureActuelle) > get24Hr(horairesOuvertures6) && get24Hr(heureActuelle) < get24Hr(horairesFermetures6) ) {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='green'>ouvert</strong></p>" );
+            }
+            else if ( jourActuel.getDay() == 0 ) {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='red'>fermé</strong></p>" );
+            }
+    
+            else {
+                $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong class='red'>fermé</strong></p>" );
+            }
+    
+    
+            function get24Hr(time) {
+                var hours = Number(time.match(/^(\d+)/)[1]);
+                var AMPM = time.match(/\s(.*)$/)[1];
+                if (AMPM == "PM" && hours < 12) hours = hours + 12;
+                if (AMPM == "AM" && hours == 12) hours = hours - 12;
+    
+                var minutes = Number(time.match(/:(\d+)/)[1]);
+                hours = hours * 100 + minutes;
+                console.log(time + " - " + hours);
+                return hours;
+            }
+    
+            function getval() {
+                var currentTime = new Date()
+                var hours = currentTime.getHours()
+                var minutes = currentTime.getMinutes()
+    
+                if (minutes < 10) minutes = "0" + minutes;
+    
+                var suffix = "AM";
+                if (hours >= 12) {
+                    suffix = "PM";
+                    hours = hours - 12;
+                }
+                if (hours == 0) {
+                    hours = 12;
+                }
+                var current_time = hours + ":" + minutes + " " + suffix;
+    
+                return current_time;
+            }
+        });
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).foundation();
+
+            if (Foundation.MediaQuery.is('large')) {
+                $('.services-animate').addClass('is-animating');
+            }
+
+            $('#return-to-top').click(function () { // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop: 0 // Scroll to top of body
+                }, 500);
+            });
+        });
+    </script>
+    {% render_block "js" %}
+</body>
+</html>
+
+<!-- <script type="text/javascript">
+    // Horaires du Lundi
+    var horairesOuvertures1 = '10:00 AM';
+    var horairesFermetures1 = '19:00 PM';
+
+    // Horaires du Mardi
+    var horairesOuvertures2 = '12:30 PM';
+    var horairesFermetures2 = '21:30 PM';
+
+    // Horaires du Mercredi
+    var horairesOuvertures3 = '10:00 AM';
+    var horairesFermetures3 = '21:30 PM';
+
+    // Horaires du Jeudi
+    var horairesOuvertures4 = '10:00 AM';
+    var horairesFermetures4 = '23:59 PM';
+
+    // Horaires du Vendredi
+    var horairesOuvertures5 = '10:00 AM';
+    var horairesFermetures5 = '23:59 PM';
+
+    // Horaires du Samedi
+    var horairesOuvertures6 = '10:00 AM';
+    var horairesFermetures6 = '23:59 PM';
+</script> -->
+
+<!-- <script type="text/javascript">
+    $(document).ready(function () {
+        $( ".horaire-dynamique" ).append( "<p>Le Bar L'Atelier est actuellement <strong>fermé</strong></p>" );
+    });
+</script> -->

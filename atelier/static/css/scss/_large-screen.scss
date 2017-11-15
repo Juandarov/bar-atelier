@@ -1,0 +1,161 @@
+/* Large and up */
+@media screen and (min-width: 64em) {
+    // PAGES
+        // BASE CSS
+        .container {
+            width: 940px;
+            margin: auto;
+        }
+        .title-bar {
+            display: none;
+        }
+        .top-bar {
+            padding: 0;
+        } 
+        
+        // HOME CSS
+        .home {
+            width: 100%;
+
+            .center {
+                margin-top: 2em;
+                .horaire-dynamique {
+                    @include mui-animation(fade);
+                    animation-duration: 3s;
+                    text-align: center;
+                }
+                .services {
+                    @include mui-animation(slide($direction: right, $amount: 120%));
+                    animation-duration: 2s;
+
+                    #bar {
+                        box-shadow: 4px 4px 2px 0px rgba(214, 214, 214, 0.7);
+                        background-color: $white-home-carte-transparent;
+                    }
+                    #bar:hover{
+                        box-shadow: 4px 4px 2px 0px $rouge-atelier;
+                    }
+
+                    #atelier {
+                        box-shadow: -4px 4px 2px 0px rgb(214, 214, 214);
+                        background-color: $white-home-carte-transparent;
+                    }
+                    #atelier:hover {
+                        box-shadow: -4px 4px 2px 0px $vert-atelier;
+                    }
+
+                    #evenements {
+                        box-shadow: 4px -4px 2px 0px rgb(214, 214, 214);
+                        background-color: $white-home-carte-transparent;
+                    }
+                    #evenements:hover {
+                        box-shadow: 4px -4px 2px 0px $bleu-atelier;
+                    }
+
+                    #services {
+                        box-shadow: -4px -4px 2px 0px rgb(214, 214, 214);
+                        background-color: $white-home-carte-transparent;
+                    }
+                    #services:hover {
+                        box-shadow: -4px -4px 2px 0px $jaune-atelier;
+                    }
+                }
+
+                .evenements {
+                    @include mui-animation(slide($direction: left, $amount: 120%));
+                    animation-duration: 2s;
+
+                    padding-right: 0;
+                    padding-left: 50px;
+                }
+            }
+        }
+        .home+footer {
+            
+            div {
+                padding: 1.5em;
+            }
+        } 
+        
+        // BAR CSS
+        .bar {
+            .accordion-atelier {
+                width: 100%;
+                margin: auto;
+                margin-top: 2em;
+                h2 {
+                    line-height: 84px;
+                }
+            }
+        } 
+        
+        // ATELIER CSS
+        .atelier {
+            .accordion-atelier {
+                margin-top: 2em;
+
+                #impression_3d {
+                    h2 {
+                        line-height: 84px;
+                    }
+                }
+                #atelier_formation {}
+                #coworking {
+                    h2 {
+                        line-height: 84px;
+                    }
+                }
+            }
+        } 
+        
+        // CONTACT CSS
+        
+        // SERVICES CSS
+        .services {
+            #f1_container {
+                position: relative;
+                margin: 10px auto;
+                height: 281px;
+                z-index: 1;
+    
+            }
+            #f1_container {
+                perspective: 1000;
+                
+                @include mui-animation(fade);
+                animation-duration: 3s;
+                text-align: center;
+            }
+            #f1_card {
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 0.6s linear;
+            }
+            #f1_container:hover #f1_card {
+                transform: rotateY(180deg);
+            }
+            .face {
+                position: absolute;
+                background-color: grey;
+                box-shadow: 3px 3px 10px -2px blue;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+            .face.back {
+                display: block;
+                transform: rotateY(180deg);
+                box-sizing: border-box;
+                padding: 10px;
+                color: white;
+                text-align: center;
+                background-color: #aaa;
+            }
+        }
+    }
+    
+    
+    /* Large only */
+    
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {}

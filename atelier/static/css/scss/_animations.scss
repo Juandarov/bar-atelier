@@ -1,0 +1,18 @@
+// // ANIMATIONS
+// /* Small only */
+// $time-animation: 1.45s;
+
+// /* Large only */
+// @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+// @include mui-series($time-animation) {
+//     .home #bar {
+//         @include mui-queue(0.5s, 0s, fade, zoom);
+//     }
+//     .home #atelier {
+//         @include mui-queue(0.5s, 0s, fade, zoom);
+//     }
+//     .home #lieu-de-vie {
+//         @include mui-queue(0.5s, 0s, fade, zoom);
+//     }
+// }

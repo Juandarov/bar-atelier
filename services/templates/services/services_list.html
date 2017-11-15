@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+{% load static %}
+{% block title %}
+{% page_attribute "page_title" %}
+{% endblock title %}
+{% block content %}
+
+<h1>Services List</h1>
+<div class="services">
+    <div class="row">
+        {% for service in services %}   
+            <div id="f1_container" class="small-12 large-3 columns">
+                <div id="f1_card" class="shadow">
+                    <div class="front face">
+                        <p>{{ service.name }}</p>
+                        <img src="{{ service.image.url }}" alt="service_image">
+                    </div>
+                    <div class="back face center">
+                        <p>{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

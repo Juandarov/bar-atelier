@@ -1,0 +1,100 @@
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    body {
+        background-size: inherit;
+
+        .logo {
+            display: none;
+        }
+    }
+
+    
+    // PAGES
+    
+        #return-to-top {
+            display: none;
+        }
+
+        // BASE CSS
+        .base {
+            .title-bar {
+                background-color: #383838;
+
+            }
+
+            .top-bar {
+                li {
+                    a {
+                        color: grey;
+                    }
+                }
+            }
+        }
+    
+        // HOME CSS
+        .home {
+            .services {
+                #bar {
+                    background-color: $rouge-atelier-transparent;
+                    width: 90%;
+                    margin: auto;
+                }
+                #atelier {
+                    background-color: $vert-atelier-transparent;
+                }
+                #evenements {
+                    background-color: $bleu-atelier-transparent;
+                }
+                #services {
+                    background-color: $jaune-atelier-transparent;
+                }
+            }
+
+            .evenements {
+                padding: 0px;
+            }
+
+            .home-footer {
+                background-color: $white-home-transparent;
+                div {
+                    padding: 0.5em;
+                }
+            }
+        }
+    
+        // BAR CSS
+        .bar {
+            .accordion-atelier {  
+                width: 100%;
+                #atelier-tabs.accordion {
+                    background: transparent;
+                    .accordion-title:hover, .accordion-title:focus {
+                        background-color: transparent;
+                    }
+    
+                    .accordion-title {
+                        img {
+                            width: 100%;
+                        }
+    
+                        .description {
+                            display: none;
+                        }
+                        
+                    }
+    
+                    #SB {
+                        background-color: $white-atelier-transparent-small;
+                    }
+                    #JDS {
+                        background-color: $white-atelier-transparent-small;
+                    }
+                    #RV {
+                        background-color: $white-atelier-transparent-small;
+                    }
+    
+                }
+            }
+        }
+        
+    }

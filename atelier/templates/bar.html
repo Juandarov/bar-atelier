@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+{% load static %}
+{% block title %}
+{% page_attribute "page_title" %}
+{% endblock title %}
+{% block content %}
+
+<div class="bar">
+    <div class="row">
+        <div class="accordion-atelier">
+            <ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" data-allow-all-closed="true" id="atelier-tabs">
+                <li class="tabs-title is-active" id="snack_bar">
+                    <a href="#SB" aria-selected="true">
+                        <h2><span>s</span>nack / <span>b</span>ar</h2>
+                        <img src="{% static 'image_bar.jpg' %}" alt="img_bar">
+                        <p class="description">Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur
+                            de sens et utilisant les structures propres à une langue</p>
+                        <p>Plus d'info</p>
+                        <div class="arrow-up"></div>
+                    </a>
+                </li>
+
+                <li class="tabs-title" id="jeux_de_societe">
+                    <a href="#JDS">
+                        <h2><span>j</span>eux <span>d</span>e société</h2>
+                        <img src="{% static 'image_jeux_societe.jpg' %}" alt="img">
+                        <p class="description">Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur
+                            de sens et utilisant les structures propres à une langue</p>
+                        <p>Plus d'info</p>
+                        <div class="arrow-up"></div>
+                    </a>
+                </li>
+
+                <li class="tabs-title" id="realite_virtuelle">
+                    <a href="#RV">
+                        <h2><span>r</span>éalite virtuelle</h2>
+                        <img src="{% static 'image_realite_virtuelle.jpg' %}" alt="img">
+                        <p class="description">Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur
+                            de sens et utilisant les structures propres à une langue</p>
+                        <p>Plus d'info</p>
+                        <div class="arrow-up"></div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tabs-content" data-tabs-content="atelier-tabs">
+                <div class="tabs-panel is-active" id="SB">
+                    <div class="row">
+                        <div class="small-12 medium-7 columns">
+                            <div class="row texte">
+                                {% placeholder "snack_bar_texte1" %}
+                            </div>
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            {% placeholder "snack_bar_image" %}
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs-panel" id="JDS">
+                    <div class="row">
+                        <div class="small-12 medium-7 columns">
+                            <div class="row texte">
+                                {% placeholder "jeux_texte1" %}
+                            </div>
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            {% placeholder "jeux_image" %}
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs-panel" id="RV">
+                    <div class="row">
+                        <div class="small-12 medium-7 columns">
+                            <div class="row texte">
+                                {% placeholder "realite_virtuelle_texte1" %}
+                            </div>
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            {% placeholder "realite_virtuelle_image" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% addtoblock "js" %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".tabs-title").click(function () {
+            $('html, body').animate({
+                scrollTop: $(".tabs-content").offset().top
+            }, 800);
+        });
+    });
+
+    // ===== Scroll to Top ==== 
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+            $('#return-to-top').fadeIn(200); // Fade in the arrow
+        } else {
+            $('#return-to-top').fadeOut(200); // Else fade out the arrow
+        }
+    });
+</script>
+{% endaddtoblock %} 
+
+{% endblock content %}

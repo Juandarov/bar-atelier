@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+{% load static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+    <h1>Evènement</h1>
+    <div class="fb-page" data-href="https://www.facebook.com/lebarlatelier/" data-tabs="events" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/lebarlatelier/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/lebarlatelier/">Le Bar L&#039;Atelier</a></blockquote></div>
+
+    {% placeholder "facebook_plugin" %}
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1150552338378962';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+{% endaddtoblock %} 
+
+{% endblock content %}

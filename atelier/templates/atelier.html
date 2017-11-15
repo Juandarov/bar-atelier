@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+{% load static %}
+{% block title %}
+{% page_attribute "page_title" %}
+{% endblock title %}
+{% block content %}
+
+<div class="atelier">
+    <div class="row">
+        <div class="accordion-atelier">
+            <ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="example-tabs">
+                <li class="tabs-title is-active" id="impression_3d">
+                    <a href="#IMP" aria-selected="true">
+                        <h2><span>i</span>mpression 3D</h2>
+                        <img src="{% static 'image_impression.jpg' %}" alt="img">
+                        <p>Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur
+                            de sens et utilisant les structures propres à une langue</p>
+                        <p>Plus d'info</p>
+                        <div class="arrow-up"></div>
+                    </a>
+                </li>
+
+                <li class="tabs-title" id="atelier_formation">
+                    <a href="#AF">
+                        <h2><span>a</span>teliers & <span>f</span>ormations</h2>
+                        <img src="{% static 'image_formations.jpg' %}" alt="img">
+                        <p>Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur
+                            de sens et utilisant les structures propres à une langue</p>
+                        <p>Plus d'info</p>
+                        <div class="arrow-up"></div>
+                    </a>
+                </li>
+
+                <li class="tabs-title" id="coworking">
+                    <a href="#CK">
+                        <h2><span>c</span>oworking</h2>
+                        <img src="{% static 'image_coworking.jpg' %}" alt="img">
+                        <p>Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur
+                            de sens et utilisant les structures propres à une langue</p>
+                        <p>Plus d'info</p>
+                        <div class="arrow-up"></div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tabs-content" data-tabs-content="example-tabs">
+                <div class="tabs-panel is-active" id="IMP">
+                    <div class="row">
+                        <div class="small-12 medium-7 columns">
+                            <div class="row texte">
+                                {% placeholder "impressions_texte1" %}
+                            </div>
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            {% placeholder "impressions_image" %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs-panel" id="AF">
+                    <div class="row">
+                        <div class="small-12 medium-7 columns">
+                            <div class="row texte">
+                                {% placeholder "atelier_formation_texte1" %}
+                            </div>
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            {% placeholder "atelier_formation_image" %}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tabs-panel" id="CK">
+                    <div class="row">
+                        <div class="small-12 medium-7 columns">
+                            <div class="row texte">
+                                {% placeholder "coworking_texte1" %}
+                            </div>
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            {% placeholder "coworking_image" %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".tabs-title").click(function () {
+            $('html, body').animate({
+                scrollTop: $(".tabs-content").offset().top
+            }, 800);
+        });
+    });
+</script>
+{% endaddtoblock %} 
+{% endblock content %}

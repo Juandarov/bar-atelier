@@ -1,0 +1,705 @@
+@import 'static/bower_components/foundation-sites/assets/foundation.scss';
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+@import 'static/bower_components/motion-ui/motion-ui.scss';
+@include motion-ui-transitions;
+@include motion-ui-animations;
+@import "static/bower_components/foundation-sites/scss/components/_accordion.scss";
+@import "variables";
+@import "animations";
+@import "small-screen";
+@import "medium-screen";
+@import "large-screen";
+
+$breakpoints: ( small: 0px, medium: 40em, large: 64em, );
+// ALL CSS
+h1 {
+    color: grey;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+    // BASE CSS
+    .base {
+        .green {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
+    }
+
+    // HOME CSS
+    .home {
+        .services {
+            background-color: $white-home-transparent;
+
+            #bar {
+                padding: $home-button-pad;
+                margin: $home-services-margin;
+                
+                font-size: 14px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                border: none;
+                border-radius: $home-services-border-radius;
+
+                h4 {
+                    color: grey;
+
+                    span {
+                        background-color: $rouge-atelier;
+                        padding: 0 0.15em;
+                        color: white;
+                        border-radius: $strong-letters-BR;
+                    }
+                }
+            }
+            #bar:hover {
+                background-color: $rouge-atelier-transparent;
+            }
+            #bar:active {
+                
+            }
+    
+    
+            #atelier {
+                padding: $home-button-pad;
+                margin: $home-services-margin;
+                
+                font-size: 14px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                border: none;
+                border-radius: $home-services-border-radius;
+
+                h4 {
+                    color: grey;
+
+                    span {
+                        background-color: $vert-atelier;
+                        padding: 0 0.15em;
+                        color: white;
+                        border-radius: $strong-letters-BR;
+                    }
+                }
+            }
+            #atelier:hover {
+                background-color: $vert-atelier-transparent;
+            }
+            #atelier:active {
+                
+            }
+    
+    
+            #evenements {
+                padding: $home-button-pad;
+                margin: $home-services-margin;
+                
+                font-size: 14px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                border: none;
+                border-radius: $home-services-border-radius;
+
+                h4 {
+                    color: grey;
+
+                    span {
+                        background-color: $bleu-atelier;
+                        padding: 0 0.15em;
+                        color: white;
+                        border-radius: $strong-letters-BR;
+                    }
+                }
+            }
+            #evenements:hover {
+                background-color: $bleu-atelier-transparent;
+            }
+            #lieu-de-vie:active {
+                
+            }
+    
+    
+            #services {
+                padding: $home-button-pad;
+                margin: $home-services-margin;
+                
+                font-size: 14px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                border: none;
+                border-radius: $home-services-border-radius;
+
+                h4 {
+                    color: grey;
+
+                    span {
+                        background-color: $jaune-atelier;
+                        padding: 0 0.15em;
+                        color: white;
+                        border-radius: $strong-letters-BR;
+                    }
+                }
+            }
+            #services:hover {
+                background-color: $jaune-atelier-transparent;
+            }
+            #services:active {
+                
+            }
+        }
+
+        .home-footer {
+            background-color: $white-home-transparent;
+        }
+    }
+
+    // BAR CSS
+    .bar {
+        #snack_bar {
+            a {
+                padding-bottom: 1.5em;
+                h2 {
+                    text-align: center;
+                    text-transform: capitalize;
+                    color: #575652;
+                    span {
+                        background-color: $rouge-atelier;
+                        padding: 0 0.15em;
+                        color: white;
+                        border-radius: $strong-letters-BR;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        #jeux_de_societe {
+            a {
+                padding-bottom: 1.5em;
+                h2 {
+                    text-align: center;
+                    text-transform: capitalize;
+                    color: #575652;
+                    span:first-of-type {
+                        background-color: $vert-atelier;
+                        padding: 0 0.25em;
+                        color: white;
+                        border-radius: $strong-letters-BR;
+                    }
+                    span:last-of-type {
+                        text-transform: lowercase;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        #realite_virtuelle {
+            a {
+                padding-bottom: 1.5em;
+                h2 {
+                    text-align: center;
+                    text-transform: capitalize;
+                    color: #575652;
+                    span {
+                        background-color: $bleu-atelier;
+                        padding: 0 0.2em;
+                        color: white;
+                        border-radius: $strong-letters-BR;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // ATELIER CSS
+    .atelier {
+        #impression_3d {
+            h2 {
+                text-align: center;
+                text-transform: capitalize;
+                color: #575652;
+                span {
+                    background-color: $rouge-atelier;
+                    padding: 0 0.4em;
+                    color: white;
+                    border-radius: $strong-letters-BR;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+        #atelier_formation {
+            h2 {
+                text-align: center;
+                text-transform: capitalize;
+                color: #575652;
+                span:first-of-type {
+                    background-color: $vert-atelier;
+                    padding: 0 0.25em;
+                    color: white;
+                    border-radius: $strong-letters-BR;
+                }
+                span:last-of-type {
+                    text-transform: lowercase;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+        #coworking {
+            h2 {
+                text-align: center;
+                text-transform: capitalize;
+                color: #575652;
+                span {
+                    background-color: $bleu-atelier;
+                    padding: 0 0.2em;
+                    color: white;
+                    border-radius: $strong-letters-BR;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    // CONTACT CSS
+    .contact {
+        .adress {
+            h4 {
+                text-transform: capitalize;
+                color: #575652;
+                span {
+                    background-color: $rouge-atelier;
+                    padding: 0 0.15em;
+                    color: white;
+                    border-radius: $strong-letters-BR; 
+                }
+            }
+        }
+        .partenaria {
+            h4 {
+                text-transform: capitalize;
+                color: #575652;
+                span {
+                    background-color: $vert-atelier;
+                    padding: 0 0.15em;
+                    color: white;
+                    border-radius: $strong-letters-BR; 
+                }
+            }
+        }
+
+        .email {
+            h4 {
+                text-transform: capitalize;
+                color: #575652;
+                span {
+                    background-color: $bleu-atelier;
+                    padding: 0 0.15em;
+                    color: white;
+                    border-radius: $strong-letters-BR; 
+                }
+            } 
+        }
+    }
+
+// TRANSPARENT BACKGROUNDS
+.tabs {
+    background-color: rgba(255, 255, 255, 0.5);
+    li {
+        a {
+            background-color: rgba(255, 255, 255, 0.3);  
+        }
+    }
+}
+
+/* Medium and up */
+
+@media screen and (min-width: 40em) {
+    body {
+        background-size: cover;
+    }
+
+    div.top-bar {
+        background-color: transparent;
+        width: 100%;
+        .dropdown {
+            background-color: $rouge-atelier-transparent;
+            width: 100%;
+        }
+    }
+    .horaire-dynamique {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        cursor: pointer;
+        border: none;
+        font: normal 30px/normal "Passero One", Helvetica, sans-serif;
+        color: rgba(255,255,255,1);
+        text-align: center;
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        text-shadow: 0 1px 0 rgb(204,204,204) , 0 2px 0 rgb(201,201,201) , 0 3px 0 rgb(187,187,187) , 0 4px 0 rgb(185,185,185) , 0 5px 0 rgb(170,170,170) , 0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;
+        -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    .base {
+        .logo{
+            img {
+                width: 70%;
+            }
+        }
+        .nav-custom {
+            position: relative;
+
+            .top-bar {
+                position: absolute;
+                bottom: 0;
+                
+                .medium-horizontal {
+                    display: flex;
+                    justify-content: space-around;
+
+                    a {
+                        color: white;
+                    }
+
+                    a:hover {
+                        color: white;
+                        border-bottom: solid 3px white;
+                    }
+
+                    .selected {
+                        border-bottom: solid 3px white;
+                    }
+
+                    .selected:hover {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .home {
+        .home-footer {
+            div {
+                padding: 1.5em;
+            }
+        }
+    }
+
+    .bar {
+        .accordion-atelier {
+            .tabs {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 1em 0em;
+                .tabs-title {
+                    width: 33.339%;
+                    margin: 0.5em;
+                    border-radius: $simple-border-radius;
+                    a {
+                        padding-bottom: 0;
+                        outline: 0;
+                        border-radius: $simple-border-radius;
+                    }
+                }
+                #snack_bar.is-active {
+                    box-shadow: 0px 1px 5px 2px $rouge-atelier;
+                    border-bottom: solid 3px $rouge-atelier;
+                    a {
+                        padding-bottom: 0em;
+                        .arrow-up {
+                            width: 0;
+                            margin: 0 auto;
+                            height: 0;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            border-bottom: 15px solid $rouge-atelier;
+                        }
+                    }
+                }
+                #jeux_de_societe.is-active {
+                    box-shadow: 0px 1px 5px 2px $vert-atelier;
+                    border-bottom: solid 3px $vert-atelier;
+                    a {
+                        padding-bottom: 0em;
+                        .arrow-up {
+                            width: 0;
+                            margin: 0 auto;
+                            height: 0;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            border-bottom: 15px solid $vert-atelier;
+                        }
+                    }
+                }
+                #realite_virtuelle.is-active {
+                    box-shadow: 0px 1px 5px 2px  $bleu-atelier;
+                    border-bottom: solid 3px $bleu-atelier;
+                    a {
+                        padding-bottom: 0em;
+                        .arrow-up {
+                            width: 0;
+                            margin: 0 auto;
+                            height: 0;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            border-bottom: 15px solid $bleu-atelier;
+                        }
+                    }
+                }
+
+                #snack_bar.tabs-title > a:hover {
+                    background: $rouge-atelier-transparent;
+                    color: white;
+                }
+                #jeux_de_societe.tabs-title > a:hover {
+                    background: $vert-atelier-transparent;
+                    color: white;
+                }
+                #realite_virtuelle.tabs-title > a:hover {
+                    background: $bleu-atelier-transparent;
+                    color: white;
+                }
+        
+        
+                #snack_bar.tabs-title > a[aria-selected="true"] {
+                    background-color: $rouge-atelier-transparent;
+                    color: white;
+                }
+                #jeux_de_societe.tabs-title > a[aria-selected="true"] {
+                    background-color: $vert-atelier-transparent;
+                    color: white;
+                }
+                #realite_virtuelle.tabs-title > a[aria-selected="true"] {
+                    background-color: $bleu-atelier-transparent;
+                    color: white;
+                }
+            }
+            .tabs-content {
+                width: 100%;
+                background: transparent;
+                .is-active {
+                    // @include mui-animation(slide($direction: bottom, $amount: 100%));
+                    // animation-duration: 2s;
+                    @include mui-hinge(
+                        $state: in,
+                        $from: left,
+                        $axis: center,
+                        $perspective: 2000px,
+                        $turn-origin: from-back
+                      );
+                }
+
+                .texte {
+                    padding: 0em 1em;
+                }
+
+                #SB.tabs-panel {
+                    background-color: $rouge-atelier-transparent;
+                    border-top: solid 4px $rouge-atelier;
+                }
+
+                #JDS.tabs-panel {
+                    background-color: $vert-atelier-transparent;
+                    border-top: solid 4px $vert-atelier;
+                }
+
+                #RV.tabs-panel {
+                    background-color: $bleu-atelier-transparent;
+                    border-top: solid 4px $bleu-atelier;
+                }
+            }
+        }
+    }
+
+    .atelier {
+        .accordion-atelier {
+            .tabs {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 1em 0em;
+                .tabs-title {
+                    width: 33.339%;
+                    margin: 0.5em;
+                    border-radius: $simple-border-radius;
+                    a {
+                        padding-bottom: 0;
+                        outline: 0;
+                        border-radius: $simple-border-radius;
+                        height: 100%;
+                    }
+                }
+                #impression_3d.is-active {
+                    box-shadow: 0px 1px 5px 2px $rouge-atelier;
+                    border-bottom: solid 3px $rouge-atelier;
+                    .arrow-up {
+                        width: 0;
+                        margin: 0 auto;
+                        height: 0;
+                        border-left: 15px solid transparent;
+                        border-right: 15px solid transparent;
+                        border-bottom: 15px solid $rouge-atelier;
+                    }
+                }
+                #atelier_formation.is-active {
+                    box-shadow: 0px 1px 5px 2px $vert-atelier;
+                    border-bottom: solid 3px $vert-atelier;
+                    .arrow-up {
+                        width: 0;
+                        margin: 0 auto;
+                        height: 0;
+                        border-left: 15px solid transparent;
+                        border-right: 15px solid transparent;
+                        border-bottom: 15px solid $vert-atelier;
+                    }
+                }
+                #coworking.is-active {
+                    box-shadow: 0px 1px 5px 2px  $bleu-atelier;
+                    border-bottom: solid 3px $bleu-atelier;
+                    .arrow-up {
+                        width: 0;
+                        margin: 0 auto;
+                        height: 0;
+                        border-left: 15px solid transparent;
+                        border-right: 15px solid transparent;
+                        border-bottom: 15px solid $bleu-atelier;
+                    }
+                }
+
+                #impression_3d.tabs-title > a:hover {
+                    background: $rouge-atelier-transparent;
+                    color: white;
+                }
+                #atelier_formation.tabs-title > a:hover {
+                    background: $vert-atelier-transparent;
+                    color: white;
+                }
+                #coworking.tabs-title > a:hover {
+                    background: $bleu-atelier-transparent;
+                    color: white;
+                }
+        
+        
+                #impression_3d.tabs-title > a[aria-selected="true"] {
+                    background-color: $rouge-atelier-transparent;
+                    color: white;
+                }
+                #atelier_formation.tabs-title > a[aria-selected="true"] {
+                    background-color: $vert-atelier-transparent;
+                    color: white;
+                }
+                #coworking.tabs-title > a[aria-selected="true"] {
+                    background-color: $bleu-atelier-transparent;
+                    color: white;
+                }
+            }
+            .tabs-content {
+                width: 100%;
+                background: transparent;
+                .is-active {
+                    // @include mui-animation(slide($direction: bottom, $amount: 100%));
+                    // animation-duration: 2s;
+                    @include mui-hinge(
+                        $state: in,
+                        $from: left,
+                        $axis: center,
+                        $perspective: 2000px,
+                        $turn-origin: from-back
+                      );
+                }
+
+                .texte {
+                    padding: 0em 1em;
+                }
+
+                #IMP.tabs-panel {
+                    background-color: $rouge-atelier-transparent;
+                    border-top: solid 4px $rouge-atelier;
+                }
+
+                #AF.tabs-panel {
+                    background-color: $vert-atelier-transparent;
+                    border-top: solid 4px $vert-atelier;
+                }
+
+                #CK.tabs-panel {
+                    background-color: $bleu-atelier-transparent;
+                    border-top: solid 4px $bleu-atelier;
+                }
+            }
+        }
+    }
+}
+
+// RETURN TO TOP
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
